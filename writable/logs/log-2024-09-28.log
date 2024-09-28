@@ -1,0 +1,64 @@
+ERROR - 2024-09-28 18:34:06 --> Error connecting to the database: mysqli_sql_exception: Unknown database 'blog' in D:\ITST\FundamentosBD\blog\system\Database\MySQLi\Connection.php:186
+Stack trace:
+#0 D:\ITST\FundamentosBD\blog\system\Database\MySQLi\Connection.php(186): mysqli->real_connect('localhost', 'root', Object(SensitiveParameterValue), 'blog', 3306, '', 0)
+#1 D:\ITST\FundamentosBD\blog\system\Database\BaseConnection.php(421): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 D:\ITST\FundamentosBD\blog\system\Database\BaseConnection.php(616): CodeIgniter\Database\BaseConnection->initialize()
+#3 D:\ITST\FundamentosBD\blog\system\Database\BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 D:\ITST\FundamentosBD\blog\system\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+#5 D:\ITST\FundamentosBD\blog\system\BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+#6 D:\ITST\FundamentosBD\blog\app\Controllers\Home.php(20): CodeIgniter\BaseModel->findAll()
+#7 D:\ITST\FundamentosBD\blog\system\CodeIgniter.php(933): App\Controllers\Home->index()
+#8 D:\ITST\FundamentosBD\blog\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#9 D:\ITST\FundamentosBD\blog\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 D:\ITST\FundamentosBD\blog\system\Boot.php(325): CodeIgniter\CodeIgniter->run()
+#11 D:\ITST\FundamentosBD\blog\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#12 D:\ITST\FundamentosBD\blog\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#13 D:\ITST\FundamentosBD\blog\system\rewrite.php(44): require_once('D:\\ITST\\Fundame...')
+#14 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: Unknown database 'blog' in D:\ITST\FundamentosBD\blog\system\Database\MySQLi\Connection.php:231
+Stack trace:
+#0 D:\ITST\FundamentosBD\blog\system\Database\BaseConnection.php(421): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 D:\ITST\FundamentosBD\blog\system\Database\BaseConnection.php(616): CodeIgniter\Database\BaseConnection->initialize()
+#2 D:\ITST\FundamentosBD\blog\system\Database\BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#3 D:\ITST\FundamentosBD\blog\system\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+#4 D:\ITST\FundamentosBD\blog\system\BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+#5 D:\ITST\FundamentosBD\blog\app\Controllers\Home.php(20): CodeIgniter\BaseModel->findAll()
+#6 D:\ITST\FundamentosBD\blog\system\CodeIgniter.php(933): App\Controllers\Home->index()
+#7 D:\ITST\FundamentosBD\blog\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#8 D:\ITST\FundamentosBD\blog\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 D:\ITST\FundamentosBD\blog\system\Boot.php(325): CodeIgniter\CodeIgniter->run()
+#10 D:\ITST\FundamentosBD\blog\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#11 D:\ITST\FundamentosBD\blog\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#12 D:\ITST\FundamentosBD\blog\system\rewrite.php(44): require_once('D:\\ITST\\Fundame...')
+#13 {main}
+CRITICAL - 2024-09-28 18:34:06 --> CodeIgniter\Database\Exceptions\DatabaseException: Unable to connect to the database.
+Main connection [MySQLi]: Unknown database 'blog'
+[Method: GET, Route: /]
+in SYSTEMPATH\Database\BaseConnection.php on line 467.
+ 1 SYSTEMPATH\Database\BaseConnection.php(616): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH\Database\BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `publicaciones`', [], false)
+ 3 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 4 SYSTEMPATH\BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+ 5 APPPATH\Controllers\Home.php(20): CodeIgniter\BaseModel->findAll()
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->index()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('D:\\ITST\\FundamentosBD\\blog\\public\\index.php')
+CRITICAL - 2024-09-28 18:41:09 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "posts/index.php"
+[Method: GET, Route: /]
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 41.
+ 1 SYSTEMPATH\View\View.php(222): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('posts/index.php')
+ 2 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('posts/index', [], true)
+ 3 APPPATH\Controllers\Home.php(27): view('posts/index', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->index()
+ 5 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 6 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+10 SYSTEMPATH\rewrite.php(44): require_once('D:\\ITST\\FundamentosBD\\blog\\public\\index.php')
